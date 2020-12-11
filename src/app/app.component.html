@@ -18,14 +18,60 @@
 </div>
 
 <div class="content" role="main">
-  
-  <div *ngFor="let entry of addresses" class="address-container">
-    <p>{{entry.name}}</p>
-    <p>{{entry.address}}</p>
-    <p>{{entry.email}}</p>
-    <p>{{entry.phone}}</p>
-  </div>
 
+  <!-- Left Side of Page -->
+  <div class="address-container">
+    <div class="book-header">
+      <h3>Contacts</h3>
+      <!-- Dropdown to sort contacts -->
+      <div class="dropdown">
+        <button class="drop-button">Sort By</button>
+        <div class="dropdown-content">
+          <a>
+            Last Name (A-Z)
+          </a>
+          <a>
+            Last Name (Z-A)
+          </a>
+          <a>
+            First Name (A-Z)
+          </a>
+          <a>
+            First Name (Z-A)
+          </a>
+          <a>
+            Date (New to Old)
+          </a>
+          <a>
+            Date (Old to New)
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Display contacts below -->
+    <div *ngFor="let entry of addressEntries" class="address">
+      <!-- left side of entry for titles -->
+      <div class="address-titles">
+        <p>Name</p>
+        <p>Address</p>
+        <p>Email</p>
+        <p>Phone</p>
+      </div>
+      <!-- right side for unique entry data -->
+      <div class="address-data">
+        <div class="name-container">
+          <p>{{entry.fName}}</p>
+          <p>{{entry.lName}}</p>
+        </div>
+        <p>{{entry.address}}</p>
+        <p>{{entry.email}}</p>
+        <p>{{entry.phone}}</p>
+      </div>
+      
+    </div>
+  </div>
+  
+  
   <!-- Footer -->
   <footer>
     

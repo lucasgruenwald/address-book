@@ -1,4 +1,82 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin: 8px 0;
+}
+
+p {
+margin: 0;
+}
+
+.spacer {
+flex: 0.3;
+}
+
+.toolbar {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 5%;
+display: flex;
+align-items: center;
+background-color: #c54d38;
+color: white;
+font-weight: 600;
+}
+
+
+footer {
+margin-top: 8px;
+display: flex;
+align-items: center;
+line-height: 20px;
+}
+
+footer a {
+display: flex;
+align-items: center;
+}
+
+.name-github{
+    text-decoration: none;
+    color: white;
+}
+
 .address-container{
     background-color: yellow;
-    margin: 20%;
+    margin: 10%;
+    padding: 1%;
+    width: 25em;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: -10%;
 }
+
+.address{
+    display: flex;
+    min-height: 90px;
+    min-width: 300px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.address-titles{
+    margin: 2%;
+    text-align: center;
+}
+
+.name-conainer{
+    white-space: nowrap;
+}
+
+.name-container > * {
+    display: inline;
+    margin-right: 5px;
+}
+

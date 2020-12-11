@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'address-book';
 
-  addresses = [
-    { name: "JohnDoe", address: "123 Main Street", 
+  addressEntries = [
+    { fName: "John", lName: "Doe", address: "123 Main Street", 
       email: "JohnDoe@gmail.com", phone: "123-456-7890"},
-    { name: "JaneDoe", address: "123 Main Street", 
+    { fName: "Jane", lName: "Brown", address: "123 Main Street", 
     email: "JaneDoe@yahoo.com", phone: "123-456-7891"},
   ]
     
