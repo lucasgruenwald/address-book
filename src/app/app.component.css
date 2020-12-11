@@ -47,6 +47,13 @@ align-items: center;
     color: white;
 }
 
+.content {
+    display: flex;
+    background-color: rgb(157, 193, 229);
+    margin: -10px;
+    padding-bottom: 50%;
+}
+
 .address-container{
     background-color: yellow;
     margin: 10%;
@@ -78,5 +85,20 @@ align-items: center;
 .name-container > * {
     display: inline;
     margin-right: 5px;
+}
+
+.add-entry-container{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.add-entry-container > label{
+    min-width: 100px;
+    float: left;
+}
+
+.add-entry-container > input{
+    width: 80%;
+    margin-bottom: 3%;
 }
 

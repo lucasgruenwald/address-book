@@ -1,3 +1,4 @@
+import { fn } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 
 @Component({
@@ -15,9 +16,18 @@ export class AppComponent {
     email: "JaneDoe@yahoo.com", phone: "123-456-7891"},
   ]
     
-  // addEntry(name, address, email, phone){
+  addEntry(fNameEntry, lNameEntry, addressEntry, emailEntry, phoneEntry){
 
-  // }
+    let newEntry = {  
+      fName: fNameEntry,
+      lName: lNameEntry,
+      address: addressEntry,
+      email: emailEntry,
+      phone: phoneEntry
+    }
+
+    this.addressEntries.push(newEntry)
+  }
 
   // validateEmail(){
 

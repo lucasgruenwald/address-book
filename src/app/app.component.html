@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <!-- Display contacts below -->
+    <!-- display contacts below -->
     <div *ngFor="let entry of addressEntries" class="address">
       <!-- left side of entry for titles -->
       <div class="address-titles">
@@ -57,7 +57,7 @@
         <p>Email</p>
         <p>Phone</p>
       </div>
-      <!-- right side for unique entry data -->
+      <!-- matching entry data -->
       <div class="address-data">
         <div class="name-container">
           <p>{{entry.fName}}</p>
@@ -71,7 +71,34 @@
     </div>
   </div>
   
-  
+  <!-- add new contact - right side of page  -->
+  <div class="add-entry-container">
+    <h3>New Contact:</h3>
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" #fname>
+    <br>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" #lname>
+    <br>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" #address>
+    <br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" #email>
+    <br>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" #phone>
+    <br>
+      <button 
+      class="add-entry-button"
+      (click)="addEntry(fname.value, lname.value, address.value, 
+      email.value, phone.value)"
+      >Add Entry
+      </button>
+    <br>
+    <!-- add button here to reset page? -->
+  </div>
+
   <!-- Footer -->
   <footer>
     
