@@ -72,6 +72,9 @@
       <button class="delete-contact" (click)="deleteEntry(entry.order)">
         ×
       </button>
+      <button class="edit-contact" id="edit-contact-btn" (click)="selectToEdit(entry.order)">
+        ✏️
+      </button>
     </div>
   </div>
   
@@ -149,11 +152,37 @@
       </button>
     </form>
     <br>
-    <button onClick="window.location.reload();" class="reset-button">
+    <form #editForm="ngForm" action="" (ngSubmit)="editEntry(editForm)">
+      <!-- button click will tell you what 'order' entry you are editing -->
+      <h3>Edit Contact</h3>
+      <div class="form-group">
+        <label for="fName">First name:</label>
+        <input required ngModel #fName="ngModel" type="text" id="fName" name="fName" class="form-input-edit">
+      </div>
+      <div class="form-group">
+        <label for="lName">Last name:</label>
+        <input required ngModel #lName="ngModel" type="text" id="lName" name="lName" class="form-input-edit">
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input required ngModel #address="ngModel" type="text" id="address" name="address" class="form-input-edit">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input required ngModel #email="ngModel" type="text" id="email" name="email" class="form-input-edit">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input required ngModel #phone="ngModel" type="text" id="phone" name="phone" class="form-input-edit">
+      </div>
+      <button class="edit-entry-button" id="edit-entry-btn" type="submit">
+        Submit Changes
+      </button>
+    </form>
+    <!-- <button onClick="window.location.reload();" class="reset-button">
       Reset Contacts
-    </button>
+    </button> -->
   </div>
-
 
 </div>
 

@@ -144,6 +144,35 @@ td{
     background-color: rgb(185, 185, 185);
     border-radius: 7px;
     font-size: 18px;
+    cursor: pointer;
+}
+
+.edit-contact{
+    margin: 5px;
+    margin-top: 54px;
+    height: 34px;
+    right: 0px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 7px;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.edit-contact .edit-form{
+    visibility: hidden;
+    width: 20%;
+    background-color: gray;
+    text-align: center;
+    z-index: 1;
+    left: 50%;
+}
+
+.edit-contact .show{
+    visibility: visible;
+    width: 200px;
+    background-color: yellow;
 }
 
 
@@ -155,23 +184,35 @@ td{
 }
 
 .add-entry-container > h3{
-    margin-bottom: 12%;
+    margin-bottom: 7%;
 }
 
 .add-entry-button{
-    margin-top: 5%;
+    margin-top: 2%;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.add-entry-container > form > div > label{
+.edit-entry-button{
+    margin-top: 2%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form > div > label{
     min-width: 100px;
     font-weight: 500;
     float: left;
 }
 
-.add-entry-container > form > div > input{
+form > div > input{
     width: 80%;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
+}
+
+form {
+    border-bottom: 1px solid black;
+    padding-bottom: 5%;
 }
 
 .reset-button{
@@ -185,3 +226,31 @@ td{
     font-size: 14px;
     margin-bottom: 10px;
 }
+
+.edit-contact{
+    margin: 5px;
+    margin-top: 52px;
+    height: 34px;
+    width: 40px;
+    position: absolute;
+    right: 0px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+} 
+
+.edit-contact.active{
+    margin: 5px;
+    margin-top: 52px;
+    height: 34px;
+    width: 40px;
+    position: absolute;
+    right: 0px;
+    background-color: rgb(167, 86, 0);
+    border-radius: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+} 

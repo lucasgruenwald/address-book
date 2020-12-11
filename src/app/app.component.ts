@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'address-book';
-
+  currentlyEditing = null;
   entryCount = 3;
 
   addressEntries = [
@@ -22,14 +22,13 @@ export class AppComponent {
     },
   ]
 
-  // validateForm() {
   //  could add more validation
-  // }
     
   onSubmit(contactData, firstValid, lastValid){
     // only validating name presence for now
     if(firstValid && lastValid){
       // increment to keep order of newest entries
+      // could increase time efficiency here if needed
       this.entryCount += 1
       let newEntry = {
         fName: contactData.value.fname,
@@ -83,5 +82,34 @@ export class AppComponent {
   deleteEntry(idx){
     this.addressEntries = this.addressEntries.filter( ele => ele.order !== idx)
   }
+
+  selectToEdit(idx) {
+    this.currentlyEditing = idx;
+    console.log(this.currentlyEditing)
+  }
+
+  editEntry(contactData) {
+    // make sure the user chose a post to edit
+    if (this.currentlyEditing){
+      this.deleteEntry(this.currentlyEditing)
+
+      // create 'new' entry with same order value from before
+      let newEntry = {
+        fName: contactData.value.fName,
+        lName: contactData.value.lName,
+        address: contactData.value.address,
+        email: contactData.value.email,
+        phone: contactData.value.phone,
+        order: this.currentlyEditing
+      };
+
+      this.addressEntries.push(newEntry)
+
+      this.currentlyEditing = null;
+      console.log(this.addressEntries)
+    }
+    // else should notify user to choose a post to edit
+  } 
+  
 
 }
