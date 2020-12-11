@@ -37,12 +37,13 @@ font-weight: 600;
 .address-container{
     background-color: rgb(210, 230, 250);
     margin: 10%;
+    margin-left: 7%;
+    margin-bottom: -10%;
     padding: 1%;
     width: 25em;
     min-width: 20em;
     border: 2px solid rgb(105, 105, 150);
     border-radius: 5px;
-    margin-bottom: -10%;
     /* could add scroll feature for large datasets */
     /* height: 30em;
     overflow: scroll; */
@@ -215,12 +216,6 @@ form {
     padding-bottom: 5%;
 }
 
-.reset-button{
-    margin-top: 35%;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 .alert{
     color: darkred;
     font-size: 14px;
@@ -254,3 +249,34 @@ form {
     cursor: pointer;
     outline: none;
 } 
+
+.middle-container{
+    text-align: center;
+    min-width: 8em;
+    margin-top: 30%;
+    height: 100%;
+}
+
+.center-alert{
+    visibility: hidden;
+    font-size: 16px;
+}
+
+.center-alert.active{
+    visibility: visible;
+}
+
+.reset-button{
+    color: rgb(67, 23, 23);
+    font-size: 14px;
+    margin-top: 80%;
+    cursor: pointer;
+}
+
+.silly-image{
+    max-width: 5em;
+    max-height: 5em;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+

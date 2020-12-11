@@ -78,6 +78,26 @@
     </div>
   </div>
   
+  <div class="middle-container">
+    <img
+    class="silly-image"
+    src="https://www.familytree.com/wp-content/uploads/2014/10/phone-clip.gif"/>
+    <div id="center-alert" class="center-alert">
+      <div>
+        Editing
+      </div>
+      <div>
+        In
+      </div>
+      <div>
+        Progress
+      </div>
+    </div>
+    <button onClick="window.location.reload();" class="reset-button">
+          Reset Contacts
+    </button>
+  </div>
+  
   <!-- form to create new contacts  -->
   <div class="add-entry-container">
     <h3>New Contact:</h3>
@@ -154,7 +174,7 @@
     <br>
     <form #editForm="ngForm" action="" (ngSubmit)="editEntry(editForm)">
       <!-- button click will tell you what 'order' entry you are editing -->
-      <h3>Edit Contact</h3>
+      <h3>Edit Contact:</h3>
       <div class="form-group">
         <label for="fName">First name:</label>
         <input required ngModel #fName="ngModel" type="text" id="fName" name="fName" class="form-input-edit">
@@ -179,9 +199,7 @@
         Submit Changes
       </button>
     </form>
-    <!-- <button onClick="window.location.reload();" class="reset-button">
-      Reset Contacts
-    </button> -->
+    
   </div>
 
 </div>

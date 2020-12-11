@@ -80,18 +80,27 @@ export class AppComponent {
 
   // could add popup confirmation before executing deletion
   deleteEntry(idx){
-    this.addressEntries = this.addressEntries.filter( ele => ele.order !== idx)
+    // add rules to prevent deletion during entry
+    this.addressEntries = this.addressEntries.filter( ele => ele.order !== idx);
   }
 
   selectToEdit(idx) {
-    this.currentlyEditing = idx;
-    console.log(this.currentlyEditing)
+    // remove editing if currently editing same post
+    if (this.currentlyEditing === idx){
+      this.currentlyEditing = null;
+      let alert = document.getElementById('center-alert');
+      alert.classList.remove('active');
+    } else {
+      this.currentlyEditing = idx
+      let alert = document.getElementById('center-alert');
+      alert.classList.add('active');
+    }
   }
 
   editEntry(contactData) {
     // make sure the user chose a post to edit
     if (this.currentlyEditing){
-      this.deleteEntry(this.currentlyEditing)
+      this.deleteEntry(this.currentlyEditing);
 
       // create 'new' entry with same order value from before
       let newEntry = {
@@ -106,7 +115,8 @@ export class AppComponent {
       this.addressEntries.push(newEntry)
 
       this.currentlyEditing = null;
-      console.log(this.addressEntries)
+      let alert = document.getElementById('center-alert');
+      alert.classList.remove('active');
     }
     // else should notify user to choose a post to edit
   } 
