@@ -101,7 +101,8 @@
   <!-- form to create new contacts  -->
   <div class="add-entry-container">
     <h3>New Contact:</h3>
-    <form #inputForm="ngForm" (ngSubmit)="onSubmit(inputForm, 
+    <form #inputForm="ngForm" 
+    (ngSubmit)="onSubmit(inputForm, 
       fname.valid, lname.valid)">
       <div class="form-group">
         <label for="fname">First name:</label>
@@ -169,6 +170,11 @@
       id="add-entry-btn" 
       type="submit">
       Add Entry
+      </button>
+      <button
+      class="clear-entry-button"
+      (click)="inputForm.resetForm(); inputForm.touched = false">
+      Clear
       </button>
     </form>
     <br>

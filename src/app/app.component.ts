@@ -45,6 +45,7 @@ export class AppComponent {
         const control = contactData.form.get(field);
         control.markAsTouched({ onlySelf: true });
       });
+      // more logic to add + prevent errors when form is cleared
     }
   }
 
@@ -120,6 +121,6 @@ export class AppComponent {
     }
     // else should notify user to choose a post to edit
   } 
-  
+
 
 }
