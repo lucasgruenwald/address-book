@@ -50,23 +50,25 @@
     </div>
     <!-- display contacts below -->
     <div *ngFor="let entry of addressEntries" class="address">
-      <!-- left side of entry for titles -->
-      <div class="address-titles">
-        <p>Name</p>
-        <p>Address</p>
-        <p>Email</p>
-        <p>Phone</p>
-      </div>
-      <!-- matching entry data -->
-      <div class="address-data">
-        <div class="name-container">
-          <p>{{entry.fName}}</p>
-          <p>{{entry.lName}}</p>
-        </div>
-        <p>{{entry.address}}</p>
-        <p>{{entry.email}}</p>
-        <p>{{entry.phone}}</p>
-      </div>
+      <!-- create table for each contact -->
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{entry.fName}} {{entry.lName}}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{entry.address}}</td>
+        </tr>
+        <tr>  
+          <th>Email</th>
+          <td>{{entry.email}}</td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>{{entry.phone}}</td>
+        </tr>
+      </table>
       <button class="delete-contact" (click)="deleteEntry(entry.order)">
         ×
       </button>
@@ -75,21 +77,22 @@
   
   <!-- add new contact - right side of page  -->
   <div class="add-entry-container">
+    <!-- could add alert explaining max input lengths -->
     <h3>New Contact:</h3>
       <label for="fname">First Name:</label>
-      <input type="text" id="fname" name="fname" #fname>
+      <input type="text" id="fname" name="fname" maxlength="12" #fname>
     <br>
       <label for="lname">Last Name:</label>
-      <input type="text" id="lname" name="lname" #lname>
+      <input type="text" id="lname" name="lname" maxlength="15" #lname>
     <br>
       <label for="address">Address:</label>
-      <input type="text" id="address" name="address" #address>
+      <input type="text" id="address" name="address" maxlength="45"  #address>
     <br>
       <label for="email">Email:</label>
-      <input type="text" id="email" name="email" #email>
+      <input type="text" id="email" name="email" maxlength="15"  #email>
     <br>
       <label for="phone">Phone:</label>
-      <input type="text" id="phone" name="phone" #phone>
+      <input type="text" id="phone" name="phone" maxlength="15" #phone>
     <br>
       <button 
       class="add-entry-button"
@@ -98,7 +101,9 @@
       >Add Entry
       </button>
     <br>
-    <!-- add button here to reset page? -->
+    <button onClick="window.location.reload();" class="reset-button">
+      Reset
+    </button>
   </div>
 
   <!-- Footer -->

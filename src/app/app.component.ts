@@ -16,7 +16,7 @@ export class AppComponent {
       email: "JohnDoe@gmail.com", phone: "123-456-7890", order: 1
     },
     { fName: "Jane", lName: "Brown", address: "123 Main Street", 
-    email: "JaneDoe@yahoo.com", phone: "123-456-7891", order: 2
+    email: "JaneBrown@yahoo.com", phone: "123-456-7891", order: 2
     },
     {fName: "Bob", lName: "Smith", address: "567 89th Street",
         email: "BobSmith@aol.com", phone: "456-789-0123", order: 3
