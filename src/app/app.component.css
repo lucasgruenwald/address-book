@@ -1,13 +1,4 @@
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-margin: 8px 0;
-}
-
 p {
 margin: 0;
 }
@@ -24,22 +15,9 @@ right: 0;
 height: 5%;
 display: flex;
 align-items: center;
-background-color: #c54d38;
+background-color: #4a63c9;
 color: white;
 font-weight: 600;
-}
-
-
-footer {
-margin-top: 8px;
-display: flex;
-align-items: center;
-line-height: 20px;
-}
-
-footer a {
-display: flex;
-align-items: center;
 }
 
 .name-github{
@@ -52,7 +30,7 @@ align-items: center;
     background-color: lightsteelblue;
     margin: -10px;
     padding-bottom: 50%;
-    flex: wrap;
+    flex-wrap: wrap;
 }
 
 .address-container{
@@ -81,8 +59,8 @@ align-items: center;
     margin-right: 4%;
 }
 
-.address-titles > p {
-    margin: 2%
+.address-titles > * {
+    margin: 1%
 }
 
 .address-data{
@@ -154,12 +132,27 @@ align-items: center;
     border-radius: 5px;
 }
 
+.delete-contact{
+    margin: 5px;
+    float: top;
+    position: absolute;
+    height: 25px;
+    right: 0px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 7px;
+    font-size: 18px;
+}
+
 
 /* Styling for right side of page below */
 
 .add-entry-container{
     margin-top: 10%;
     margin-left: 10%;
+}
+
+.add-entry-button{
+    font-size: 16px;
 }
 
 .add-entry-container > label{

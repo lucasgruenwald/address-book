@@ -72,5 +72,9 @@ export class AppComponent {
     }
   }
 
+  // could add popup confirmation before executing deletion
+  deleteEntry(idx){
+    this.addressEntries = this.addressEntries.filter( ele => ele.order !== idx)
+  }
 
 }

@@ -17,8 +17,8 @@
   <a class="name-github" target="_blank" href="https://github.com/lucasgruenwald">🔗 By Luke Gruenwald</a>
 </div>
 
+<!-- holds contacts & new contact form -->
 <div class="content" role="main">
-
   <!-- Left Side of Page -->
   <div class="address-container">
     <div class="book-header">
@@ -67,7 +67,9 @@
         <p>{{entry.email}}</p>
         <p>{{entry.phone}}</p>
       </div>
-      
+      <button class="delete-contact" (click)="deleteEntry(entry.order)">
+        ×
+      </button>
     </div>
   </div>
   
@@ -100,9 +102,8 @@
   </div>
 
   <!-- Footer -->
-  <footer>
-    
-  </footer>
+  <!-- <footer>
+  </footer> -->
 
 </div>
 
