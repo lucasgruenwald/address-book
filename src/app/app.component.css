@@ -37,7 +37,7 @@ font-weight: 600;
 .address-container{
     background-color: rgb(210, 230, 250);
     margin: 10%;
-    margin-left: 7%;
+    margin-left: 5%;
     margin-bottom: -10%;
     padding: 1%;
     width: 25em;
@@ -182,7 +182,7 @@ td{
 /* Styling for right side of page below */
 
 .add-entry-container{
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 10%;
 }
 
@@ -198,6 +198,7 @@ td{
 
 .clear-entry-button{
     margin-top: 2%;
+    margin-left: 5px;
     font-size: 16px;
     cursor: pointer;
 }
@@ -260,8 +261,8 @@ form {
 
 .middle-container{
     text-align: center;
-    min-width: 8em;
-    margin-top: 30%;
+    min-width: 3em;
+    margin-top: 12%;
     height: 100%;
 }
 
@@ -277,7 +278,7 @@ form {
 .reset-button{
     color: rgb(67, 23, 23);
     font-size: 14px;
-    margin-top: 80%;
+    margin-top: 200%;
     cursor: pointer;
 }
 
