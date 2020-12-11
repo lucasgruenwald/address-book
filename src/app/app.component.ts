@@ -1,4 +1,3 @@
-import { fn } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 
 @Component({
@@ -22,24 +21,32 @@ export class AppComponent {
         email: "BobSmith@aol.com", phone: "456-789-0123", order: 3
     },
   ]
+
+  // validateForm() {
+  //  could add more validation
+  // }
     
-  addEntry(fNameEntry, lNameEntry, addressEntry, emailEntry, phoneEntry){
-
-    // could add validation of input data
-
-    // increment to keep order of newest entries
-    this.entryCount += 1
-
-    let newEntry = {  
-      fName: fNameEntry,
-      lName: lNameEntry,
-      address: addressEntry,
-      email: emailEntry,
-      phone: phoneEntry,
-      order: this.entryCount
+  onSubmit(contactData, firstValid, lastValid){
+    // only validating name presence for now
+    if(firstValid && lastValid){
+      // increment to keep order of newest entries
+      this.entryCount += 1
+      let newEntry = {
+        fName: contactData.value.fname,
+        lName: contactData.value.lname,
+        address: contactData.value.address,
+        email: contactData.value.email,
+        phone: contactData.value.phone,
+        order: this.entryCount
+      };
+      this.addressEntries.push(newEntry);
+    } else {
+      // if input invalid, show errors to user
+      Object.keys(contactData.form.controls).forEach(field => {
+        const control = contactData.form.get(field);
+        control.markAsTouched({ onlySelf: true });
+      });
     }
-
-    this.addressEntries.push(newEntry)
   }
 
   sortByLastName(direction){

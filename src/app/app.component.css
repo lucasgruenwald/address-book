@@ -131,7 +131,7 @@ td{
     cursor: pointer;
 }
 .dropdown-content > a:hover{
-    background-color: #5c5f6b;
+    background-color: #010828;
     border-radius: 5px;
 }
 
@@ -163,12 +163,13 @@ td{
     font-size: 16px;
 }
 
-.add-entry-container > label{
+.add-entry-container > form > div > label{
     min-width: 100px;
+    font-weight: 500;
     float: left;
 }
 
-.add-entry-container > input{
+.add-entry-container > form > div > input{
     width: 80%;
     margin-bottom: 3%;
 }
@@ -177,4 +178,10 @@ td{
     margin-top: 35%;
     font-size: 16px;
     cursor: pointer;
+}
+
+.alert{
+    color: darkred;
+    font-size: 14px;
+    margin-bottom: 10px;
 }

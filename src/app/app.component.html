@@ -75,40 +75,85 @@
     </div>
   </div>
   
-  <!-- add new contact - right side of page  -->
+  <!-- form to create new contacts  -->
   <div class="add-entry-container">
-    <!-- could add alert explaining max input lengths -->
     <h3>New Contact:</h3>
-      <label for="fname">First Name:</label>
-      <input type="text" id="fname" name="fname" maxlength="12" #fname>
-    <br>
-      <label for="lname">Last Name:</label>
-      <input type="text" id="lname" name="lname" maxlength="15" #lname>
-    <br>
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="address" maxlength="45"  #address>
-    <br>
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" maxlength="15"  #email>
-    <br>
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" name="phone" maxlength="15" #phone>
-    <br>
+    <form #inputForm="ngForm" (ngSubmit)="onSubmit(inputForm, 
+      fname.valid, lname.valid)">
+      <div class="form-group">
+        <label for="fname">First name:</label>
+        <input 
+          required
+          minlength="1"
+          maxlength="18"
+          ngModel 
+          #fname="ngModel"
+          type="text" 
+          id="fname" 
+          name="fname"
+          class="form-input">
+          <div class="alert" *ngIf="fname.touched && !fname.valid">First Name Required</div>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last name:</label>
+        <input 
+          required
+          minlength="1"
+          maxlength="20"
+          ngModel  
+          #lname="ngModel"
+          type="text" 
+          id="lname" 
+          name="lname"
+          class="form-input">
+        <div class="alert" *ngIf="lname.touched && !lname.valid">Last Name Required</div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input 
+          maxlength="60"
+          ngModel  
+          #address="ngModel"
+          type="text" 
+          id="address" 
+          name="address"
+          class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input 
+            maxlength="30"
+            ngModel  
+            #email="ngModel"
+            type="text" 
+            id="email" 
+            name="email"
+            class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input 
+            maxlength="15"
+            ngModel  
+            #phone="ngModel"
+            type="text" 
+            id="phone" 
+            name="phone"
+            class="form-input">
+      </div>
       <button 
-      class="add-entry-button"
-      (click)="addEntry(fname.value, lname.value, address.value, 
-      email.value, phone.value)"
-      >Add Entry
+      class="add-entry-button" 
+      id="add-entry-btn" 
+      type="submit">
+      Add Entry
       </button>
+    </form>
     <br>
     <button onClick="window.location.reload();" class="reset-button">
-      Reset
+      Reset Contacts
     </button>
   </div>
 
-  <!-- Footer -->
-  <!-- <footer>
-  </footer> -->
 
 </div>
 
