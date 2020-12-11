@@ -27,22 +27,22 @@
       <div class="dropdown">
         <button class="drop-button">Sort By</button>
         <div class="dropdown-content">
-          <a>
+          <a (click)="sortByLastName('asc')">
             Last Name (A-Z)
           </a>
-          <a>
+          <a (click)="sortByLastName('desc')">
             Last Name (Z-A)
           </a>
-          <a>
+          <a (click)="sortByFirstName('asc')">
             First Name (A-Z)
           </a>
-          <a>
+          <a (click)="sortByFirstName('desc')">
             First Name (Z-A)
           </a>
-          <a>
+          <a (click)="sortByAge('newest')">
             Date (New to Old)
           </a>
-          <a>
+          <a (click)="sortByAge('oldest')">
             Date (Old to New)
           </a>
         </div>

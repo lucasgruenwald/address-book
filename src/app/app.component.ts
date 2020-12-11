@@ -9,32 +9,68 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'address-book';
 
+  entryCount = 3;
+
   addressEntries = [
     { fName: "John", lName: "Doe", address: "123 Main Street", 
-      email: "JohnDoe@gmail.com", phone: "123-456-7890"},
+      email: "JohnDoe@gmail.com", phone: "123-456-7890", order: 1
+    },
     { fName: "Jane", lName: "Brown", address: "123 Main Street", 
-    email: "JaneDoe@yahoo.com", phone: "123-456-7891"},
+    email: "JaneDoe@yahoo.com", phone: "123-456-7891", order: 2
+    },
+    {fName: "Bob", lName: "Smith", address: "567 89th Street",
+        email: "BobSmith@aol.com", phone: "456-789-0123", order: 3
+    },
   ]
     
   addEntry(fNameEntry, lNameEntry, addressEntry, emailEntry, phoneEntry){
+
+    // could add validation of input data
+
+    // increment to keep order of newest entries
+    this.entryCount += 1
 
     let newEntry = {  
       fName: fNameEntry,
       lName: lNameEntry,
       address: addressEntry,
       email: emailEntry,
-      phone: phoneEntry
+      phone: phoneEntry,
+      order: this.entryCount
     }
 
     this.addressEntries.push(newEntry)
   }
 
-  // validateEmail(){
+  sortByLastName(direction){
+    if (direction === "asc"){
+      this.addressEntries = this.addressEntries.sort((a, b) =>
+      (a.lName.toLowerCase() > b.lName.toLowerCase()) ? 1 : -1);
+    } else if (direction === "desc"){
+      this.addressEntries = this.addressEntries.sort((a, b) =>
+      (a.lName.toLowerCase() > b.lName.toLowerCase()) ? -1 : 1);
+    }
+  }
 
-  // }
+  sortByFirstName(direction) {
+    if (direction === "asc") {
+      this.addressEntries = this.addressEntries.sort((a, b) =>
+        (a.fName.toLowerCase() > b.fName.toLowerCase()) ? 1 : -1);
+    } else if (direction === "desc") {
+      this.addressEntries = this.addressEntries.sort((a, b) =>
+        (a.fName.toLowerCase() > b.fName.toLowerCase()) ? -1 : 1);
+    }
+  }
 
-  // validatePhone(){
+  sortByAge(direction){
+    if (direction === "newest"){
+      this.addressEntries = this.addressEntries.sort((a,b) => 
+      (a.order > b.order) ? -1 : 1);
+    } else if (direction === "oldest"){
+      this.addressEntries = this.addressEntries.sort((a, b) =>
+      (a.order > b.order) ? 1 : -1);
+    }
+  }
 
-  // }
 
 }
