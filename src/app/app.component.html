@@ -17,7 +17,6 @@
   <a class="name-github" target="_blank" href="https://github.com/lucasgruenwald">🔗 By Luke Gruenwald</a>
 </div>
 
-<!-- holds contacts & new contact form -->
 <div class="content" role="main">
   <!-- Left Side of Page -->
   <div class="address-container">
@@ -72,7 +71,8 @@
       <button class="delete-contact" (click)="deleteEntry(entry.order)">
         ×
       </button>
-      <button class="edit-contact" id="edit-contact-btn" (click)="selectToEdit(entry.order)">
+      <button class="edit-contact" id="edit-contact-btn" 
+      (click)="selectToEdit(entry.order); inputForm.resetForm()">
         ✏️
       </button>
     </div>
@@ -83,18 +83,7 @@
     class="silly-image"
     src="https://www.familytree.com/wp-content/uploads/2014/10/phone-clip.gif"/>
     <div id="center-alert" class="center-alert">
-      <div>
-        To edit this,
-      </div>
-      <div>
-        Enter new data
-      </div>
-      <div>
-        in box below
-      </div>
-      <div>
-        (popup coming soon)
-      </div>
+      <!-- removed -->
     </div>
     <button onClick="window.location.reload();" class="reset-button">
           Reset Contacts
@@ -181,9 +170,17 @@
       </button>
     </form>
     <br>
-    <form #editForm="ngForm" action="" (ngSubmit)="editEntry(editForm)">
+    <!-- Popup edit form: -->
+    <div class="page-mask" id="page-mask" (click)="closeEditPopup()"></div>
+    <form #editForm="ngForm" action="" (ngSubmit)="editEntry(editForm)"
+    class="edit-form" id="edit-form">
       <!-- button click will tell you what 'order' entry you are editing -->
-      <h3>Edit Contact:</h3>
+      <div class="flex-edit">
+        <h3>Complete All Fields</h3>
+        <button class="close-edit" (click)="closeEditPopup()" 
+        (click)="editForm.resetForm()">×
+        </button>
+      </div>
       <div class="form-group">
         <label for="fName">First name:</label>
         <input required ngModel #fName="ngModel" type="text" id="fName" name="fName" class="form-input-edit">
@@ -207,6 +204,7 @@
       <button class="edit-entry-button" id="edit-entry-btn" type="submit">
         Submit Changes
       </button>
+      
     </form>
     
   </div>

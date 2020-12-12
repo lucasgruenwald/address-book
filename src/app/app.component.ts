@@ -86,6 +86,10 @@ export class AppComponent {
   }
 
   selectToEdit(idx) {
+    let unhideEditForm = document.getElementById('edit-form')
+    unhideEditForm.classList.add('active');
+    let popupDarken = document.getElementById('page-mask')
+    popupDarken.classList.add('active');
     // remove editing if currently editing same post
     if (this.currentlyEditing === idx){
       this.currentlyEditing = null;
@@ -115,12 +119,19 @@ export class AppComponent {
 
       this.addressEntries.push(newEntry)
 
-      this.currentlyEditing = null;
-      let alert = document.getElementById('center-alert');
-      alert.classList.remove('active');
+      this.closeEditPopup()
     }
     // else should notify user to choose a post to edit
   } 
+
+  // If user completes or withdraws changes
+  closeEditPopup(){
+    this.currentlyEditing = null;
+    let unhideEditForm = document.getElementById('edit-form')
+    unhideEditForm.classList.remove('active');
+    let popupDarken = document.getElementById('page-mask')
+    popupDarken.classList.remove('active');
+  }
 
 
 }
