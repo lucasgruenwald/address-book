@@ -30,9 +30,14 @@ font-weight: 600;
     display: flex;
     background-color: rgb(174, 183, 226);
     margin: -10px;
+    height: 120vh;
     padding-top: 5em;
-    padding-bottom: 50%;
     flex-wrap: wrap;
+}
+
+/* increase background depending on screen (mobile) */
+@media (max-width: 830px){
+    .content{ padding-bottom: 50vh;}
 }
 
 .address-container{
@@ -42,7 +47,7 @@ font-weight: 600;
     margin-right: 7%;
     padding: 1%;
     width: 25em;
-    min-width: 20em;
+    min-width: 18em;
     height: 60%;
     border: 2px solid rgb(105, 105, 150);
     border-radius: 5px;
@@ -78,7 +83,7 @@ font-weight: 600;
     display: flex;
     height: auto;
     max-width: 23em;
-    min-width: 19em;
+    min-width: 15em;
     position: relative;
     border: 1px solid;
     border-radius: 5px;
@@ -86,7 +91,8 @@ font-weight: 600;
 
 table{
     table-layout: fixed;
-    width: 90%;
+    width: 100%;
+    max-width: 65vw;
 }
 
 th{
@@ -107,8 +113,9 @@ td{
 }
 
 .book-header{
-    display: flex;
-    padding-right: 0em;
+    display: absolute;
+    width: 85%;
+    /* padding-right: 0em; */
 }
 
 .book-header > h3{
@@ -117,8 +124,18 @@ td{
 }
 
 .dropdown{
-    margin-left: 40%;
-    margin-top: 5%;
+    /* margin-left: 10em; */
+    float: right;
+    margin-top: -8%;
+    margin-bottom: 2px;
+    width: 5em;
+    margin-top: -30px;
+    font-size: 14px;
+    border: 1px solid rgb(65, 100, 140);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgb(159, 159, 159);
+    text-decoration: underline rgb(174, 183, 226) 1px;
 }
 
 .dropdown:hover .dropdown-content{
@@ -127,9 +144,9 @@ td{
 
 .drop-button{
     color: black;
-    padding: 5px;
+    padding: 4px;
     width: 5em;
-    margin-top: 20%;
+    /* margin-top: 20%; */
     font-size: 14px;
     border: 1px solid rgb(65, 100, 140);
     border-radius: 5px;
